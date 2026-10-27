@@ -4,7 +4,7 @@ import os
 import shutil
 
 # Configure freezer
-app.config['FREEZER_DESTINATION'] = 'build'
+app.config['FREEZER_DESTINATION'] = 'docs'
 app.config['FREEZER_RELATIVE_URLS'] = True
 
 freezer = Freezer(app)
