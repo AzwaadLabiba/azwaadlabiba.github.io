@@ -3,26 +3,25 @@ from app import app
 import os
 import shutil
 
-# Configure freezer
-app.config['FREEZER_DESTINATION'] = 'docs'
+DEST = 'docs'
+
+app.config['FREEZER_DESTINATION'] = DEST
 app.config['FREEZER_RELATIVE_URLS'] = True
+app.config['FREEZER_REMOVE_EXTRA_FILES'] = True   # wipe stale files on each build
 
 freezer = Freezer(app)
 
 if __name__ == '__main__':
     freezer.freeze()
-    
-    # Rename files without extensions to .html
-    build_dir = 'build'
-    for filename in os.listdir(build_dir):
-        filepath = os.path.join(build_dir, filename)
-        # If it's a file with no extension (not a directory, not index.html)
+
+    # Give extension-less pages a .html extension so GitHub Pages serves them as HTML
+    for filename in os.listdir(DEST):
+        filepath = os.path.join(DEST, filename)
         if os.path.isfile(filepath) and '.' not in filename:
-            new_filepath = filepath + '.html'
-            shutil.move(filepath, new_filepath)
+            shutil.move(filepath, filepath + '.html')
             print(f"Renamed: {filename} -> {filename}.html")
-    
-    print("\n" + "="*60)
-    print("Site frozen successfully!")
-    print("Output directory: build/")
-    print("="*60)
+
+    # Stop GitHub Pages from running Jekyll on the output
+    open(os.path.join(DEST, '.nojekyll'), 'w').close()
+
+    print(f"\nSite frozen into {DEST}/")
