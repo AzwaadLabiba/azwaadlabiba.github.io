@@ -1,68 +1,92 @@
+{% from "_macros.html" import star, globe %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Azwaad Labiba Mohiuddin{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title and title != 'Home' %}{{ title }} · {% endif %}Azwaad Labiba Mohiuddin</title>
+  <meta name="description" content="Azwaad Labiba Mohiuddin — PhD student in Computer Science at UL Lafayette researching zero-reference low-light image enhancement.">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Mrs+Saint+Delafield&family=Rammetto+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <nav>
-    <div class="nav-container">
-        <a href="/" class="logo">Azwaad And About!</a>
-        <div class="nav-right">
-        <!-- <ul>
-            <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
-            <li><a href="/education" class="{% if request.path == '/education' %}active{% endif %}">Education</a></li>
-            <li><a href="/experience" class="{% if request.path == '/experience' %}active{% endif %}">Experience</a></li>
-            <li><a href="/publications" class="{% if request.path == '/publications' %}active{% endif %}">Publications</a></li>
-            <li><a href="/achievements" class="{% if request.path == '/achievements' %}active{% endif %}">Achievements</a></li>
-        </ul> -->
-        <ul>
-            <li><a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Home</a></li>
-            <li><a href="{{ url_for('education') }}" class="{% if request.endpoint == 'education' %}active{% endif %}">Education</a></li>
-            <li><a href="{{ url_for('experience') }}" class="{% if request.endpoint == 'experience' %}active{% endif %}">Experience</a></li>
-            <li><a href="{{ url_for('publications') }}" class="{% if request.endpoint == 'publications' %}active{% endif %}">Publications</a></li>
-            <li><a href="{{ url_for('achievements') }}" class="{% if request.endpoint == 'achievements' %}active{% endif %}">Achievements</a></li>
+  <div class="shell">
+
+    <nav class="topbar">
+      <a href="{{ url_for('index') }}" class="brand">
+        {{ star(30, 'brand-star') }}
+        <span class="brand-text">AZWAAD LABIBA<br>MOHIUDDIN</span>
+      </a>
+
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          {% set links = [('index','Home'),('education','Education'),('experience','Experience'),('publications','Publications'),('achievements','Honours'),('updates','Updates')] %}
+          {% for ep, label in links %}
+          <li><a href="{{ url_for(ep) }}" class="{% if request.endpoint == ep %}active{% endif %}">{{ label }}</a></li>
+          {% endfor %}
         </ul>
-        <button id="theme-toggle" class="theme-toggle-nav">
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
-        </button>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+          </button>
+          <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-sm">Let's talk <span class="circle-arrow"><i class="fas fa-arrow-right"></i></span></a>
         </div>
-    </div>
+      </div>
     </nav>
 
-
     <main>
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <p>&copy; 2025 Azwaad Labiba Mohiuddin. All rights reserved.</p>
+    <footer class="footer">
+      <div class="footer-brand">
+        {{ star(30, 'brand-star') }}
+        <span class="brand-text">AZWAAD LABIBA<br>MOHIUDDIN</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('education') }}">Education</a>
+          <a href="{{ url_for('experience') }}">Experience</a>
+          <a href="{{ url_for('publications') }}">Publications</a>
+          <a href="{{ url_for('achievements') }}">Honours</a>
+          <a href="{{ url_for('updates') }}">Updates</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Elsewhere</h4>
+        <div class="footer-links single">
+          <a href="https://scholar.google.com/citations?user=o170Q9AAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://github.com/AzwaadLabiba" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/azwaadlabiba/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Let's connect</h4>
+        <p class="footer-note">Questions, collaborations, or just to say hi.</p>
+        <a class="footer-mail" href="mailto:azwaad07@gmail.com">azwaad07@gmail.com <span class="circle-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <p class="footer-copy">&copy; {{ current_year }} Azwaad Labiba Mohiuddin</p>
+      </div>
+      {{ globe(150, 'footer-globe') }}
     </footer>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-<!-- ```
-
----
-
-## 📁 File Structure
-```
-your_project/
-├── static/
-│   ├── css/
-│   │   └── style.css          ← Paste Theme 1 CSS here
-│   ├── js/
-│   │   └── script.js          ← Paste JavaScript here
-│   └── uploads/
-│       └── azwaad.png
-├── templates/
-│   ├── base.html              ← Paste HTML here
-│   ├── index.html
-│   ├── education.html
-│   └── experience.html
-└── app.py -->

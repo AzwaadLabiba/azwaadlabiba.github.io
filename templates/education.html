@@ -1,82 +1,65 @@
 {% extends "base.html" %}
+{% from "_macros.html" import page_header, section_label %}
 {% block content %}
 
-<section class="simple-page">
-  <div class="simple-container">
-    
-    <!-- Page Header -->
-    <div class="simple-header">
-      <h1 class="simple-title">Education</h1>
-      <p class="simple-subtitle">Academic background and qualifications</p>
-    </div>
+{{ page_header('Academic background', 'Education', '', 'Degrees, qualifications and the people who guide my research.') }}
 
-    <!-- Education Section -->
-    <div class="content-section">
-      
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">Doctor of Philosophy in Computer Science</h3>
-          <span class="experience-date">Jan 2025 - Present</span>
-        </div>
-        <p class="experience-subtitle">School of Computing and Informatics
-, University of Louisiana at Lafayette</p>
-        <p class="experience-location">Lafayette, Louisiana, USA</p>
-        <ul class="simple-list">
-          <li><strong>Research Focus:</strong> Image Processing, Low light Image Enhancement</li>
-          <li><strong>Supervisor:</strong> <span class="experience-title" style="font-size: 16px;"><a href="https://www.linkedin.com/in/dr-ashok-kumar-20b9a89/">Dr. Ashok Kumar</a></span></li>
-          <li><strong>Co Supervisor:</strong> <span class="experience-title" style="font-size: 16px;"><a href="https://dadl-ull.github.io/dadl.site/">Dr. Aminul Islam</a></span></li>
+<section class="block">
+  {{ section_label('Degrees') }}
+  <div class="stack">
+
+    <article class="entry reveal">
+      <div class="entry-side"><span class="entry-date">Jan 2025 – Present</span><span class="entry-ico terracotta"><i class="fas fa-graduation-cap"></i></span></div>
+      <div class="entry-main">
+        <h3>Doctor of Philosophy in Computer Science</h3>
+        <p class="entry-org">School of Computing and Informatics, University of Louisiana at Lafayette</p>
+        <p class="entry-loc"><i class="fas fa-location-dot"></i> Lafayette, Louisiana, USA</p>
+        <ul class="entry-list">
+          <li><strong>Research focus:</strong> Image Processing, Low-Light Image Enhancement</li>
+          <li><strong>Supervisor:</strong> <a href="https://www.linkedin.com/in/dr-ashok-kumar-20b9a89/" target="_blank" rel="noopener">Dr. Ashok Kumar</a></li>
+          <li><strong>Co-supervisor:</strong> <a href="https://dadl-ull.github.io/dadl.site/" target="_blank" rel="noopener">Dr. Aminul Islam</a></li>
         </ul>
       </div>
+    </article>
 
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">Bachelor of Science in Computer Science and Engineering</h3>
-          <span class="experience-date">Jan 2019 - Sep 2022</span>
-        </div>
-        <p class="experience-subtitle">School of Data and Natural Sciences, Brac University</p>
-        <p class="experience-location">Dhaka, Bangladesh</p>
-        <ul class="simple-list">
-            <li><strong>CGPA:</strong> 3.94/4.00 (Highest Distinction)</li>
-            <li><strong>Thesis:</strong> Comparative Performance Analysis of Accident Anticipation with Deep Learning Extractors</li>
-            <li><strong>Honors:</strong>
-                <ul class="simple-list">
-                <li>Placed on Vice Chancellor's and Dean's lists</li>
-                <li>Qualified for Merit-based scholarship</li>
-                </ul>
-            </li>
+    <article class="entry reveal">
+      <div class="entry-side"><span class="entry-date">Jan 2019 – Sep 2022</span><span class="entry-ico olive"><i class="fas fa-university"></i></span></div>
+      <div class="entry-main">
+        <h3>Bachelor of Science in Computer Science and Engineering</h3>
+        <p class="entry-org">School of Data and Natural Sciences, Brac University</p>
+        <p class="entry-loc"><i class="fas fa-location-dot"></i> Dhaka, Bangladesh</p>
+        <ul class="entry-list">
+          <li><strong>CGPA:</strong> 3.94 / 4.00 (Highest Distinction)</li>
+          <li><strong>Thesis:</strong> Comparative Performance Analysis of Accident Anticipation with Deep Learning Extractors</li>
+          <li><strong>Honours:</strong> Vice Chancellor's and Dean's lists; Merit-based scholarship</li>
         </ul>
       </div>
+    </article>
 
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">Higher Secondary Certificate (HSC) in Science</h3>
-          <span class="experience-date">2018</span>
-        </div>
-        <p class="experience-subtitle">Adamjee Cantonment College, Dhaka Board</p>
-        <p class="experience-location">Dhaka, Bangladesh</p>
-        <ul class="simple-list">
-            <li><strong>CGPA:</strong> 5.00/5.00</li>
-            <li><strong>Honors:</strong>
-                <ul class="simple-list">
-                <li>Awarded the Education Board General Scholarship</li>
-                </ul>
-            </li>
+    <article class="entry reveal">
+      <div class="entry-side"><span class="entry-date">2018</span><span class="entry-ico dark"><i class="fas fa-book"></i></span></div>
+      <div class="entry-main">
+        <h3>Higher Secondary Certificate (HSC) in Science</h3>
+        <p class="entry-org">Adamjee Cantonment College, Dhaka Board</p>
+        <p class="entry-loc"><i class="fas fa-location-dot"></i> Dhaka, Bangladesh</p>
+        <ul class="entry-list">
+          <li><strong>GPA:</strong> 5.00 / 5.00</li>
+          <li><strong>Honours:</strong> Education Board General Scholarship</li>
         </ul>
       </div>
+    </article>
 
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">Secondary School Certificate (HSC) in Science</h3>
-          <span class="experience-date">2016</span>
-        </div>
-        <p class="experience-subtitle">Shaheed Bir Uttam Lt. Anwar Girls College, Dhaka Board</p>
-        <p class="experience-location">Dhaka, Bangladesh</p>
-        <ul class="simple-list">
-            <li><strong>CGPA:</strong> 5.00/5.00</li>
+    <article class="entry reveal">
+      <div class="entry-side"><span class="entry-date">2016</span><span class="entry-ico dark"><i class="fas fa-book-open"></i></span></div>
+      <div class="entry-main">
+        <h3>Secondary School Certificate (SSC) in Science</h3>
+        <p class="entry-org">Shaheed Bir Uttam Lt. Anwar Girls College, Dhaka Board</p>
+        <p class="entry-loc"><i class="fas fa-location-dot"></i> Dhaka, Bangladesh</p>
+        <ul class="entry-list">
+          <li><strong>GPA:</strong> 5.00 / 5.00</li>
         </ul>
       </div>
-
-    </div>
+    </article>
 
   </div>
 </section>

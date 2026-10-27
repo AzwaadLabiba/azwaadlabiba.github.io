@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_header, star %}
+{% block content %}
+
+{{ page_header("What's new", 'Life', 'Updates', 'Papers, milestones, talks and everything in between — newest first.') }}
+
+<section class="block updates-page">
+  {% for year, items in updates|groupby('year')|reverse %}
+  <div class="year-group">
+    <div class="year-marker reveal"><span>{{ year }}</span></div>
+    <ol class="update-timeline">
+      {% for u in items %}
+      <li class="ut-item reveal {% if u.highlight %}is-highlight{% endif %}">
+        <span class="ut-dot"><i class="fas {{ u.icon or 'fa-star' }}"></i></span>
+        <div class="ut-card">
+          <div class="uc-top">
+            <span class="uc-tag">{{ u.tag }}</span>
+            <span class="uc-date">{{ u.display_date }}</span>
+            {% if u.highlight %}<span class="uc-new">{{ star(10) }} Latest</span>{% endif %}
+          </div>
+          <h3>{{ u.title }}</h3>
+          <p>{{ u.body }}</p>
+          {% if u.link %}<a class="uc-link" href="{{ u.link }}" target="_blank" rel="noopener">{{ u.link_label or 'Learn more' }} <i class="fas fa-arrow-right"></i></a>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,56 +1,42 @@
 {% extends "base.html" %}
+{% from "_macros.html" import page_header, section_label, stamp %}
 {% block content %}
 
-<section class="simple-page">
-  <div class="simple-container">
-    
-    <!-- Page Header -->
-    <div class="simple-header">
-      <h1 class="simple-title">Honours & Grants</h1>
-      <p class="simple-subtitle"></p>
-    </div>
+{{ page_header('Recognition', 'Honours', '& Grants', 'Scholarships and academic distinctions.') }}
 
-    <!-- Education Section -->
-    <div class="content-section">
-      
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title"> Merit Based Scholarship</h3>
-          <span class="experience-date">January 2019 - September 2022</span>
-        </div>
-        <p class="experience-subtitle"> Brac University, Bangladesh </p>
-        <ul class="simple-list">
-          <li>Upto 75% tution fee waiver awarded for having a CGPA above 3.9 during 10 consecutive semesters Brac University</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">Vice Chancellor’s List and Dean’s List Award</h3>
-          <span class="experience-date">January 2019 - September 2022</span>
-        </div>
-         <p class="experience-subtitle"> Brac University, Bangladesh </p>
-        <ul class="simple-list">
-          <li>Got placed on VC’s List for 8 semesters as recognition of achieving a GPA of over 3.90 on those semesters.</li>
-          <li>Got placed on Dean’s List for 3 semesters as recognition of achieving a GPA of over 3.70 on those semesters.</li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="experience-header">
-          <h3 class="experience-title">General Scholarship</h3>
-          <span class="experience-date">2018</span>
-        </div>
-         <p class="experience-subtitle"> Education Board, Bangladesh  </p>
-        <ul class="simple-list">
-          <li>A stipend awarded for achieving remarkable results in Higher Secondary Certificate Examination in 2018 throughout the 4 years of undergraduate studies from 2019 to 2022.</li>
-        </ul>
-      </div>   
-    </div>
-
-    </div>
-
+<section class="block">
+  {{ section_label('Awards') }}
+  <div class="honours">
+    <article class="honour reveal">
+      <span class="honour-ico terracotta"><i class="fas fa-award"></i></span>
+      <span class="mini-year">Jan 2019 – Sep 2022</span>
+      <h3>Merit-Based Scholarship</h3>
+      <p class="entry-org">Brac University, Bangladesh</p>
+      <p>Up to 75% tuition waiver for maintaining a CGPA above 3.9 across 10 consecutive semesters.</p>
+    </article>
+    <article class="honour reveal">
+      <span class="honour-ico olive"><i class="fas fa-list-check"></i></span>
+      <span class="mini-year">Jan 2019 – Sep 2022</span>
+      <h3>Vice Chancellor's &amp; Dean's List</h3>
+      <p class="entry-org">Brac University, Bangladesh</p>
+      <p>VC's List for 8 semesters (GPA above 3.90) and Dean's List for 3 semesters (GPA above 3.70).</p>
+    </article>
+    <article class="honour reveal">
+      <span class="honour-ico dark"><i class="fas fa-medal"></i></span>
+      <span class="mini-year">2018</span>
+      <h3>General Scholarship</h3>
+      <p class="entry-org">Education Board, Bangladesh</p>
+      <p>Stipend for outstanding HSC results, awarded throughout undergraduate studies (2019–2022).</p>
+    </article>
+    {{ stamp('HONOURS · GRANTS · AWARDS · ', 'stamp-honours') }}
   </div>
+</section>
+
+<section class="block">
+  <a href="{{ url_for('updates') }}" class="update-teaser reveal">
+    <span>Looking for something more recent?</span>
+    <strong>See life updates <span class="circle-arrow"><i class="fas fa-arrow-right"></i></span></strong>
+  </a>
 </section>
 
 {% endblock %}

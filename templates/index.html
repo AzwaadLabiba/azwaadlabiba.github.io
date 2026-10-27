@@ -1,141 +1,270 @@
 {% extends "base.html" %}
+{% from "_macros.html" import star, burst, globe, stamp, section_label %}
 {% block content %}
 
-<section class="about-page">
-  <div class="about-container">
-    
-    <!-- Profile Section with Wrapped Text -->
-    <div class="profile-section-wrapped">
-
-        <div class="profile-pic-float">
-        <img src="{{ url_for('static', filename='uploads/azwaad.png') }}" alt="Azwaad Mohiuddin" class="profile-pic">
-        <span class="highlight">Currently exploring Summer 2025 internship opportunities — let’s connect!</span>
-        <!-- Social Links RIGHT UNDER THE IMAGE -->
-        <div class="social-links">
-            <a href="https://github.com/AzwaadLabiba" class="social-icon" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/azwaadlabiba/" class="social-icon" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=o170Q9AAAAAJ&hl=en" class="social-icon" target="_blank" aria-label="Google Scholar">
-            <i class="fas fa-graduation-cap"></i>
-            </a>
-            <!-- <a href="https://twitter.com/yourusername" class="social-icon" target="_blank" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-            </a> -->
-            <a href="mailto:azwaad07@gmail.com" class="social-icon" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        </div>
-
-      <!-- Profile Content (Wraps Around Image) -->
-      <div class="profile-content-wrapped">
-        <h1 class="profile-name">Azwaad Labiba Mohiuddin</h1>
-        <p class="profile-title">PhD Student in Computer Science</p>
-        <p class="profile-institution">
-          <i class="fas fa-university"></i>
-          University of Louisiana at Lafayette
-        </p>
-
-        <!-- Bio -->
-        <div class="bio-section">
-          <p class="bio-intro">
-            <span class="wave-emoji">👋</span> Hi, I'm Azwaad! I'm a PhD student trying to discover the areas of 
-            <span class="highlight">Image Processing</span> and <span class="highlight">LLMs</span>.
-          </p>
-
-          <p class="bio-text">
-            My research focuses on low-light image enhancement using deep learning and Transformer architectures. 
-            I'm passionate about developing innovative solutions that bridge the gap between theoretical research 
-            and real-world applications. My work aims to improve image quality in challenging lighting conditions, 
-            which has applications in medical imaging, autonomous vehicles, and surveillance systems. Currently, I'm exploring novel approaches to integrate attention mechanisms with traditional image 
-            processing techniques to achieve better performance with fewer computational resources. I believe in 
-            making AI accessible and practical for everyday use.
-          </p>
-
-          <p class="bio-text">
-            Beyond research, I enjoy web development and love staying updated with emerging technologies. I often tinker with 
-            new ideas and build small projects whenever inspiration strikes — though not all of them make it to my GitHub collection. 
-            My experience as a Software Engineer has given me a balanced perspective that bridges practical development with 
-            academic curiosity. 
-          </p>
-
-          <p class="bio-text">
-            Coffee is my partner in crime — whether it’s a strong cold brew to kickstart a long work day 
-            or a cozy latte during late-night idea storms. It keeps me grounded, inspired, and occasionally over-caffeinated, but 
-            I wouldn’t have it any other way.
-          </p>
-        </div>
-
-        <!-- Research Interests (Compact) -->
-        <div class="interests-compact">
-          <strong>Research Interests:</strong> Computer Vision, Deep Learning, Low-Light Image Enhancement
-        </div>
-
-        <!-- Quote with Title -->
-        <div class="quote-section">
-          <h6 class="quote-title">A Line That Stays With Me</h6>
-          <blockquote class="quote"> Just because someone stumbles and loses their way, doesn't mean they're lost forever. Sometimes we all need a little help. <br> -Professor Charles Xavier </blockquote>
-        </div>
-      </div>
-
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-copy reveal">
+    <span class="pill-label">{{ star(12) }} PhD Student &amp; Computer Vision Researcher</span>
+    <h1 class="hero-title">
+      <span class="line">I bring</span>
+      <span class="line accent">light to</span>
+      <span class="line">dark pixels</span>
+    </h1>
+    <p class="hero-lede">
+      I build deep-learning methods that recover detail from images captured in the dark —
+      no paired references, no amplified noise. PhD student at the University of Louisiana at Lafayette.
+    </p>
+    <div class="hero-ctas">
+      <a href="{{ url_for('publications') }}" class="btn btn-primary">View my work <span class="circle-arrow"><i class="fas fa-arrow-right"></i></span></a>
+      <a href="{{ url_for('updates') }}" class="btn btn-ghost">Life updates <span class="circle-outline"><i class="fas fa-play"></i></span></a>
     </div>
-
-    <!-- Skills Section -->
-    <div class="section-divider"></div>
-
-    <div class="skills-section">
-      <h2 class="section-title-centered">Skills & Expertise</h2>
-      
-      <div class="skills-columns">
-        
-        <!-- Language Proficiency -->
-        <div class="skills-column">
-          <h3 class="skills-column-title">
-            <i class="fas fa-language"></i>
-            Language Proficiency
-          </h3>
-          <ul class="compact-list">
-            <li><strong>English:</strong> Full professional proficiency</li>
-            <li><strong>Bangla:</strong> Native proficiency</li>
-            <li><strong>French:</strong> Elementary proficiency</li>
-            <li><strong>Hindi:</strong> Elementary proficiency</li>
-          </ul>
-        </div>
-
-        <!-- Technical Skills -->
-        <div class="skills-column">
-          <h3 class="skills-column-title">
-            <i class="fas fa-code"></i>
-            Technical Skills
-          </h3>
-          
-          <div class="tech-skill-group">
-            <h4>Languages</h4>
-            <p>Java, Python, JavaScript, Typescript, PHP, HTML, CSS, LateX, SQL, Arduino</p>
-          </div>
-
-          <div class="tech-skill-group">
-            <h4>Frameworks & Libraries</h4>
-            <p>ExpressJS, Django, Laravel, Springboot, Pandas, NumPy, Pytorch, OpenCV</p>
-          </div>
-
-          <div class="tech-skill-group">
-            <h4>Developer Tools</h4>
-            <p>VSCode, Pycharm, Atom, Dr Java, Netbeans, Google Colab, Jupyter Notebook, Cisco Packet Tracer</p>
-          </div>
-
-          <div class="tech-skill-group">
-            <h4>Operating Systems & Hardware</h4>
-            <p>Windows, Linux, Arduino UNO, Raspberry Pi 4</p>
-          </div>
-        </div>
-
+    <div class="trust-strip">
+      <div class="trust-left">
+        <span class="trust-icons">
+          <span class="ti"><i class="fas fa-university"></i></span>
+          <span class="ti"><i class="fas fa-flask"></i></span>
+          <span class="ti"><i class="fas fa-chalkboard-teacher"></i></span>
+        </span>
+        <span class="trust-text">Researching at the EIC Lab,<br>UL Lafayette</span>
+      </div>
+      <div class="trust-right">
+        <span class="mini-badge">{{ star(16) }}</span>
+        {{ globe(64) }}
       </div>
     </div>
+  </div>
 
+  <div class="hero-art reveal" aria-hidden="false">
+    <svg class="orbit" viewBox="0 0 400 300" aria-hidden="true"><path d="M60 40 C -20 140, 80 240, 200 270" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="60" cy="40" r="5" fill="currentColor"/></svg>
+    <div class="art-circle">
+      <img src="{{ url_for('static', filename='uploads/azwaad-coat.jpeg') }}" alt="Portrait of Azwaad Labiba Mohiuddin" class="art-photo">
+    </div>
+    <div class="monogram"><span>A</span><i></i><span>M</span></div>
+    {{ burst(130, 'art-burst') }}
+    <div class="art-olive">
+      <div class="art-stars">{{ star(12) }}{{ star(12) }}{{ star(12) }}</div>
+      {{ globe(150, 'art-globe') }}
+    </div>
+    <div class="art-dark">
+      <svg viewBox="0 0 160 170" aria-hidden="true">
+        <circle cx="105" cy="45" r="20" class="sun"/>
+        <g class="grid" fill="none" stroke-width="0.8">
+          <path d="M0 150 L30 112 L55 128 L82 82 L108 118 L130 100 L160 135"/>
+          <path d="M0 158 L30 122 L55 136 L82 94 L108 126 L130 110 L160 143"/>
+          <path d="M0 166 L30 132 L55 144 L82 106 L108 134 L130 120 L160 151"/>
+          {% for x in range(0, 161, 16) %}<line x1="{{ x }}" y1="170" x2="{{ 82 + (x - 82) * 0.35 }}" y2="96"/>{% endfor %}
+        </g>
+      </svg>
+    </div>
+    <div class="art-card">
+      <p>Enhancing<br>light,<br>not noise<br>&amp; detail.</p>
+      {{ star(14, 'ac-star-a') }}{{ star(26, 'ac-star-b') }}
+    </div>
+    {{ star(16, 'hero-star-1') }}
+  </div>
+</section>
+
+<!-- ============ ABOUT BAND ============ -->
+<section class="about-band reveal">
+  <div class="about-photo">
+    <svg class="planet" viewBox="0 0 60 40" aria-hidden="true"><ellipse cx="30" cy="22" rx="28" ry="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="18" r="12" fill="currentColor"/></svg>
+    <img src="{{ url_for('static', filename='uploads/azwaad-downtown.jpeg') }}" alt="Azwaad Labiba Mohiuddin">
+  </div>
+  <div class="about-text">
+    <h2 class="band-title">Hi, I'm Azwaad Labiba Mohiuddin</h2>
+    <p>
+      My research focuses on low-light image enhancement with deep learning and Transformer architectures,
+      with applications in medical imaging, autonomous vehicles and surveillance. I'm exploring how attention
+      and classical image-processing ideas can combine for better results at lower compute. Before my PhD
+      I spent two years as a software engineer, so I care about research that actually ships.
+    </p>
+    <p class="about-aside"><i class="fas fa-mug-hot"></i> Powered by cold brew on long days and lattes during late-night idea storms.</p>
+    <div class="about-foot">
+      <a href="{{ url_for('education') }}" class="link-arrow">More about me <span class="circle-outline light"><i class="fas fa-arrow-right"></i></span></a>
+      <span class="signature">Azwaad</span>
+    </div>
+  </div>
+  <ul class="about-facts">
+    <li><span class="fact-ico"><i class="fas fa-location-dot"></i></span> Based in Lafayette, LA</li>
+    <li><span class="fact-ico"><i class="fas fa-briefcase"></i></span> Open to research internships</li>
+    <li><span class="fact-ico"><i class="fas fa-plus"></i></span> Open to collaboration</li>
+  </ul>
+</section>
+
+<!-- ============ WHAT I DO ============ -->
+<section class="block">
+  {{ section_label('What I do') }}
+  <div class="services">
+    <article class="service-card reveal">
+      <span class="svc-ico terracotta"><i class="fas fa-lightbulb"></i></span>
+      <div><h3>Low-Light Enhancement</h3><p>Zero-reference curve estimation, exposure-guided feedback and wavelet-based denoising.</p></div>
+      <a href="{{ url_for('publications') }}" class="circle-outline" aria-label="Publications"><i class="fas fa-arrow-right"></i></a>
+    </article>
+    <article class="service-card reveal">
+      <span class="svc-ico olive"><i class="fas fa-brain"></i></span>
+      <div><h3>Deep Learning &amp; Vision</h3><p>CNNs and Transformers for image restoration, plus a growing interest in LLMs.</p></div>
+      <a href="{{ url_for('publications') }}" class="circle-outline" aria-label="Publications"><i class="fas fa-arrow-right"></i></a>
+    </article>
+    <article class="service-card reveal">
+      <span class="svc-ico dark"><i class="fas fa-code"></i></span>
+      <div><h3>Software Engineering</h3><p>Backend architecture, databases and web platforms in Flask, Django, Spring Boot and Laravel.</p></div>
+      <a href="{{ url_for('experience') }}" class="circle-outline" aria-label="Experience"><i class="fas fa-arrow-right"></i></a>
+    </article>
+    <article class="service-card reveal">
+      <span class="svc-ico terracotta"><i class="fas fa-chalkboard-teacher"></i></span>
+      <div><h3>Teaching</h3><p>GTA for Python and Database Systems; former adjunct faculty at Brac University.</p></div>
+      <a href="{{ url_for('experience') }}" class="circle-outline" aria-label="Experience"><i class="fas fa-arrow-right"></i></a>
+    </article>
+    {{ stamp('LIGHT · RESEARCH · PIXELS · ', 'stamp-services') }}
+  </div>
+</section>
+
+<!-- ============ SKILLS + EXPERIENCE PANEL ============ -->
+<section class="dark-panel reveal">
+  <div class="panel-skills">
+    <h3 class="panel-title">Skills</h3>
+    <div class="skill-row"><span class="skill-name">Languages</span><span class="chips"><span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>PHP</span><span>LaTeX</span></span></div>
+    <div class="skill-row"><span class="skill-name">ML &amp; Data</span><span class="chips"><span>PyTorch</span><span>OpenCV</span><span>NumPy</span><span>Pandas</span></span></div>
+    <div class="skill-row"><span class="skill-name">Web</span><span class="chips"><span>Flask</span><span>Django</span><span>Spring Boot</span><span>Laravel</span><span>Express</span></span></div>
+    <div class="skill-row"><span class="skill-name">Hardware</span><span class="chips"><span>Linux</span><span>Raspberry Pi 4</span><span>Arduino</span></span></div>
+    <div class="skill-row"><span class="skill-name">Speaks</span><span class="chips"><span>Bangla</span><span>English</span><span>French</span><span>Hindi</span></span></div>
+  </div>
+
+  <div class="panel-exp">
+    <h3 class="panel-title">Experience</h3>
+    <ol class="timeline">
+      <li><span class="tl-date">2025 – Present</span><span class="tl-role">Graduate Teaching Assistant</span><span class="tl-org">UL Lafayette</span><span class="tl-desc">CMPS 150 (Python) and CMPS 460 (Database Management Systems).</span></li>
+      <li><span class="tl-date">2022 – 2024</span><span class="tl-role">Software Engineer</span><span class="tl-org">mPower Social Enterprises</span><span class="tl-desc">Scalable backends, database and API performance, mentoring.</span></li>
+      <li><span class="tl-date">2024</span><span class="tl-role">Adjunct Faculty Member</span><span class="tl-org">Brac University</span><span class="tl-desc">Software Analysis &amp; Design, Database Systems, Algorithms.</span></li>
+      <li><span class="tl-date">2021 – 2022</span><span class="tl-role">Undergraduate Student Tutor</span><span class="tl-org">Brac University</span><span class="tl-desc">15 hrs/week of Python and OOP consultations.</span></li>
+    </ol>
+  </div>
+
+  <div class="panel-tv" aria-hidden="true">
+    <svg viewBox="0 0 220 200">
+      <rect x="10" y="10" width="200" height="180" rx="26" class="tv-body"/>
+      <rect x="26" y="24" width="168" height="118" rx="30" class="tv-screen"/>
+      <g class="tv-torus" fill="none" stroke-width="0.7">
+        {% for i in range(9) %}<ellipse cx="110" cy="83" rx="{{ 62 - i * 5 }}" ry="{{ 34 - i * 2.4 }}" transform="rotate({{ -8 + i * 2 }} 110 83)"/>{% endfor %}
+        {% for i in range(12) %}<ellipse cx="110" cy="83" rx="20" ry="34" transform="rotate({{ i * 15 }} 110 83) translate({{ 0 }} 0)" opacity="0.5"/>{% endfor %}
+      </g>
+      <rect x="30" y="154" width="110" height="24" rx="6" class="tv-grille"/>
+      {% for x in range(36, 136, 8) %}<line x1="{{ x }}" y1="158" x2="{{ x }}" y2="174" class="tv-line"/>{% endfor %}
+      <circle cx="162" cy="166" r="9" class="tv-knob"/><circle cx="188" cy="166" r="9" class="tv-knob"/>
+    </svg>
+    {{ star(40, 'tv-star') }}
+  </div>
+</section>
+
+<!-- ============ FEATURED WORK ============ -->
+<section class="block">
+  {{ section_label('Featured work', url_for('publications'), 'View all work') }}
+  <div class="work-grid">
+    <a class="work-card reveal" href="{{ url_for('publications') }}">
+      <div class="work-thumb t1">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="200" height="130" class="bg-dark"/>
+          <circle cx="100" cy="70" r="38" class="fill-cream"/>
+          <path d="M100 32 A38 38 0 0 0 100 108 Z" class="fill-terracotta"/>
+          <path d="M0 110 L50 80 L80 96 L120 66 L160 92 L200 74 L200 130 L0 130Z" class="fill-olive"/>
+          {% for i in range(6) %}<line x1="0" y1="{{ 115 + i*3 }}" x2="200" y2="{{ 115 + i*3 }}" class="ln-cream"/>{% endfor %}
+        </svg>
+        <span class="play"><i class="fas fa-arrow-right"></i></span>
+      </div>
+      <h3>EZ-DCE++</h3><p>Under review · WACV 2026</p>
+    </a>
+    <a class="work-card reveal" href="{{ url_for('publications') }}">
+      <div class="work-thumb t2">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="200" height="130" class="bg-olive"/>
+          {% for i in range(7) %}<circle cx="100" cy="65" r="{{ 10 + i * 12 }}" fill="none" class="st-cream" stroke-width="{{ 6 - i * 0.6 }}"/>{% endfor %}
+          <rect x="94" y="0" width="12" height="130" class="fill-terracotta"/>
+        </svg>
+        <span class="play"><i class="fas fa-arrow-right"></i></span>
+      </div>
+      <h3>Accident Anticipation</h3><p>ICCIT 2022 · Conference paper</p>
+    </a>
+    <a class="work-card reveal" href="https://github.com/AzwaadLabiba/dadl_site" target="_blank" rel="noopener">
+      <div class="work-thumb t3">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="200" height="130" class="bg-dark"/>
+          {% for i in range(14) %}<circle cx="{{ (i * 37) % 200 }}" cy="{{ (i * 23) % 60 + 6 }}" r="0.9" class="fill-cream"/>{% endfor %}
+          <circle cx="100" cy="58" r="30" class="fill-cream"/>
+          <circle cx="92" cy="52" r="5" class="fill-sand"/><circle cx="110" cy="66" r="3.5" class="fill-sand"/>
+          <path d="M0 130 L40 92 L70 108 L100 90 L130 108 L165 88 L200 112 L200 130Z" class="fill-olive"/>
+          <rect x="98" y="96" width="4" height="12" class="fill-cream"/>
+        </svg>
+        <span class="play"><i class="fas fa-arrow-right"></i></span>
+      </div>
+      <h3>DADL Lab Website</h3><p>Flask web platform · 2025</p>
+    </a>
+    <a class="work-card reveal" href="https://github.com/AzwaadLabiba/HandsOfHope" target="_blank" rel="noopener">
+      <div class="work-thumb t4">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="200" height="130" class="bg-sand"/>
+          <circle cx="100" cy="65" r="56" class="fill-dark"/>
+          {% for i in range(5) %}<circle cx="100" cy="65" r="{{ 48 - i * 8 }}" fill="none" class="st-sand" stroke-width="1"/>{% endfor %}
+          <circle cx="100" cy="65" r="10" class="fill-terracotta"/>
+          <rect x="130" y="20" width="10" height="56" rx="4" transform="rotate(30 135 48)" class="fill-cream"/>
+        </svg>
+        <span class="play"><i class="fas fa-arrow-right"></i></span>
+      </div>
+      <h3>Hands of Hope</h3><p>Top 12 · Therap Javafest 2022</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ LIFE UPDATES (latest) ============ -->
+<section class="block">
+  {{ section_label('Life updates', url_for('updates'), 'All updates') }}
+  <div class="updates-row">
+    {% for u in updates %}
+    <article class="update-card reveal {% if u.highlight %}is-highlight{% endif %}">
+      <div class="uc-top">
+        <span class="uc-icon"><i class="fas {{ u.icon or 'fa-star' }}"></i></span>
+        <span class="uc-tag">{{ u.tag }}</span>
+        <span class="uc-date">{{ u.month }} {{ u.year }}</span>
+      </div>
+      <h3>{{ u.title }}</h3>
+      <p>{{ u.body }}</p>
+      {% if u.link %}<a class="uc-link" href="{{ u.link }}" target="_blank" rel="noopener">{{ u.link_label or 'Learn more' }} <i class="fas fa-arrow-right"></i></a>{% endif %}
+    </article>
+    {% endfor %}
+    {{ stamp('LIFE · UPDATES · NEWS · ', 'stamp-updates') }}
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote-strip reveal">
+  <i class="fas fa-quote-left"></i>
+  <blockquote>Just because someone stumbles and loses their way, doesn't mean they're lost forever. Sometimes we all need a little help.</blockquote>
+  <cite>Professor Charles Xavier</cite>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band reveal" id="contact">
+  <div class="cta-left">
+    <span class="cta-kicker">Have an idea worth exploring?</span>
+    <h2 class="cta-title">Let's work<br>together</h2>
+  </div>
+  <div class="cta-mid">
+    <p>Open to research collaborations, internships and conversations about computer vision, low-light imaging or teaching.</p>
+    <a href="mailto:azwaad07@gmail.com" class="btn btn-sand">Say hello <span class="circle-arrow dark"><i class="fas fa-arrow-right"></i></span></a>
+  </div>
+  <div class="cta-right">
+    <span class="cta-label">Email</span>
+    <a href="mailto:azwaad07@gmail.com">azwaad07@gmail.com</a>
+    <span class="cta-label">Social</span>
+    <div class="cta-social">
+      <a href="https://github.com/AzwaadLabiba" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/azwaadlabiba/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://scholar.google.com/citations?user=o170Q9AAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+  </div>
+  <div class="cta-art" aria-hidden="true">
+    <svg viewBox="0 0 200 140"><rect x="4" y="4" width="192" height="132" rx="16" fill="none" stroke="currentColor"/><circle cx="96" cy="76" r="50" fill="none" stroke="currentColor"/><ellipse cx="96" cy="76" rx="50" ry="18" fill="none" stroke="currentColor"/><ellipse cx="96" cy="76" rx="22" ry="50" fill="none" stroke="currentColor"/></svg>
+    {{ burst(110, 'cta-burst') }}
   </div>
 </section>
 

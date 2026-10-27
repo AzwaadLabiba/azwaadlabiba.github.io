@@ -1,0 +1,40 @@
+[
+  {
+    "date": "2026-10",
+    "title": "Poster: Wavelet-Based Multiscale Analysis of Illumination and Noise",
+    "tag": "Research",
+    "icon": "fa-wave-square",
+    "highlight": true,
+    "body": "Presenting our wavelet-guided, zero-reference low-light enhancement work (\"Enhance Light, Not Noise\") as a poster at a statistics conference. The idea: separate illumination from noise across frequency bands so brightening doesn't amplify artifacts."
+  },
+  {
+    "date": "2025-08",
+    "title": "EZ-DCE++ submitted to WACV 2026",
+    "tag": "Paper",
+    "icon": "fa-file-lines",
+    "body": "Submitted EZ-DCE++: Low-Light Enhancement via Multi-Scale Exposure-Guided Feedback, with Dr. Aminul Islam and Dr. Ashok Kumar."
+  },
+  {
+    "date": "2025-06",
+    "title": "Launched the DADL Lab website",
+    "tag": "Project",
+    "icon": "fa-globe",
+    "link": "https://github.com/AzwaadLabiba/dadl_site",
+    "link_label": "View repo",
+    "body": "Designed and built a Flask website for the Data Analytics and Deep Learning lab at UL Lafayette."
+  },
+  {
+    "date": "2025-01",
+    "title": "Started my PhD at UL Lafayette",
+    "tag": "Milestone",
+    "icon": "fa-graduation-cap",
+    "body": "Began a PhD in Computer Science at the School of Computing and Informatics, and joined as a Graduate Teaching Assistant for CMPS 150 and CMPS 460."
+  },
+  {
+    "date": "2024-12",
+    "title": "Wrapped up two years at mPower",
+    "tag": "Career",
+    "icon": "fa-briefcase",
+    "body": "Closed my chapter as a Software Engineer at mPower Social Enterprises after two years of backend and database work."
+  }
+]
